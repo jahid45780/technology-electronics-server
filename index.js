@@ -48,6 +48,13 @@ app.get('/brand', async(req,res)=>{
 //   res.send(result)
 // })
 
+// catd info
+app.get("/product/:text", async (req, res)=>{
+  const text = req.params.text;
+  const result = await productCollection.find({brand: text}).toArray()
+  res.send(result)
+})
+
 
 // product cart
 
